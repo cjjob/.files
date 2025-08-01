@@ -25,6 +25,11 @@ require("mini.jump2d").setup({
     },
 })
 
+require("mini.pick").setup()
+-- vim.keymap.set("n", "<leader>sb",
+vim.keymap.set("n", "<leader>sf", ":Pick files<CR>", { desc = "Search Files" })
+-- vim.keymap.set("n", "<leader>sl",
+
 require("mini.starter").setup()
 
 require("mini.sessions").setup({
