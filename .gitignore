@@ -9,6 +9,8 @@
 # Now start *including*.
 !.gitignore
 !.ignore
+!README.md
+
 
 # .config
 # In order to un-ignore specific subdirs we first have to un-ignore the parent dir.
