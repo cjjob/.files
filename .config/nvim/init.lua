@@ -1,5 +1,6 @@
 print("hi")
 require("autocommands")
+require("commands")
 require("keymaps")
 require("options")
 print("lol2")
