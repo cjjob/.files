@@ -1,14 +1,13 @@
-print("hi")
 require("autocommands")
 require("commands")
 require("keymaps")
 require("options")
-print("lol2")
 
 
 vim.pack.add({
-    "https://github.com/stevearc/oil.nvim",
-    { src = "https://github.com/neovim/nvim-lspconfig" }
+    { src = "https://github.com/echasnovski/mini.nvim" },
+    { src = "https://github.com/neovim/nvim-lspconfig" },
+    { src = "https://github.com/stevearc/oil.nvim" },
 })
 
 
@@ -16,6 +15,40 @@ vim.lsp.enable({
     "lua_ls",
 })
 
+require("mini.jump2d").setup({
+    labels = "abcdefghijklmnopqrstuvwxyz",
+    mappings = {
+        start_jumping = "j",
+    },
+    view = {
+        n_steps_ahead = 0,
+    },
+})
+
+require("mini.starter").setup()
+
+require("mini.sessions").setup({
+    directory = vim.fn.expand("~/workspace/nvim_sessions/"),
+})
+
+vim.keymap.set("n", "<leader>mss", function()
+    local sname = vim.fn.input("Session name: ")
+    -- TODO: Detect not overwriting existing sessions.
+    if sname == "" then
+        vim.notify("Session name cannot be empty! Aborting.")
+        return
+    end
+    MiniSessions.write(sname)
+end)
+
+vim.keymap.set("n", "<leader>msd", function()
+    local sname = vim.fn.input("Session name: ")
+    if sname == "" then
+        vim.notify("Session name cannot be empty! Aborting.")
+        return
+    end
+    MiniSessions.delete(sname)
+end)
 
 require("oil").setup({
     columns = {}, -- Disable icons.
