@@ -70,14 +70,9 @@ local keys = {
             mods = "CTRL",
         }),
     },
-    -- Ignore CTRL+Down.
-    -- TODO: My Copilot CTRL+Down isn't working.
-    -- I thought WezTerm was intercepting. But, this hasn't fixed.
-    {
-        key = "DownArrow",
-        mods = "CTRL",
-        action = act.DisableDefaultAssignment,
-    },
+    -- Cmd-[ to cycle tabs. CMD-] to open tab list to select.
+    { key = "[", mods = "CMD", action = wezterm.action.ActivateLastTab },
+    { key = "]", mods = "CMD", action = wezterm.action.ShowTabNavigator },
 }
 
 return keys
