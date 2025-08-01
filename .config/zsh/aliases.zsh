@@ -10,6 +10,7 @@ alias ll='eza --color=always --color-scale=all --color-scale-mode=gradient \
 alias lla='eza --color=always --color-scale=all --color-scale-mode=gradient \
 	--icons=always --group-directories-first -a -l --git -h'
 alias lg="lazygit"
+alias lgdot="lazygit -g .files -w $HOME"
 alias dotfiles="git --git-dir=$HOME/.files/ --work-tree=$HOME"
 alias n="nvim"
 alias srcz="source $ZDOTDIR/.zshrc"
