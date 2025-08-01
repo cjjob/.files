@@ -4,12 +4,12 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- https://coolors.co/eeeeee-333333-7ea16b-fa7921
 local my_colors = {
-	white = "#eeeeee",
-	black = "#333333",
-	green = "#7ea16b",
-	orange = "#fa7921",
+    white = "#EEEEEE",
+    grey = "#696969",
+    black = "#333333",
+    green = "#7EA16B",
+    orange = "#FA7921",
 }
 
 -- This is where you actually apply your config choices
