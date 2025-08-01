@@ -3,13 +3,11 @@ require("commands")
 require("keymaps")
 require("options")
 
-
 vim.pack.add({
     { src = "https://github.com/echasnovski/mini.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/stevearc/oil.nvim" },
 })
-
 
 vim.lsp.enable({
     "lua_ls",
@@ -28,6 +26,7 @@ require("mini.jump2d").setup({
 require("mini.pick").setup()
 -- vim.keymap.set("n", "<leader>sb",
 vim.keymap.set("n", "<leader>sf", ":Pick files<CR>", { desc = "Search Files" })
+vim.keymap.set("n", "<leader>sr", ":Pick grep_live<CR>", { desc = "Search Regex/Ripgrep Live" })
 -- vim.keymap.set("n", "<leader>sl",
 
 require("mini.starter").setup()
