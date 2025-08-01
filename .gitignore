@@ -11,8 +11,10 @@
 
 # .config
 # In order to un-ignore specific subdirs we first have to un-ignore the parent dir.
-!/.config
-!/.config/nvim
-!/.config/nvim/*
-!/.config/nvim/lua
-!/.config/nvim/lua/*
+!.config
+!.config/nvim
+!.config/nvim/*
+!.config/nvim/lua
+!.config/nvim/lua/*
+!.config/zsh
+!.config/zsh/*
