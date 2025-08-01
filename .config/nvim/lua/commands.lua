@@ -1,13 +1,13 @@
 -- Creates a new user-defined command in Neovim, called 'Redir'.
 -- The second argument is the function that gets executed when the command is called.
-vim.api.nvim_create_user_command('Redir', function(ctx)
+vim.api.nvim_create_user_command("Redir", function(ctx)
     -- Executes the arguments passed to :Redir as a Vim command (e.g., :Redir ls).
     -- `ctx.args` contains the arguments as a string.
     -- `true` makes `nvim_exec` return the output as a string.
     -- `vim.split` then splits this output string into a table of lines.
-    local lines = vim.split(vim.api.nvim_exec(ctx.args, true), '\n', { plain = true })
+    local lines = vim.split(vim.api.nvim_exec(ctx.args, true), "\n", { plain = true })
     -- Creates a new, empty buffer in a new window.
-    vim.cmd('new')
+    vim.cmd("new")
     -- Sets the content of the current (newly created) buffer.
     -- `0` refers to the current buffer.
     -- `0` and `-1` specify to replace all lines from start to end.
@@ -22,6 +22,6 @@ end, {
     -- `nargs = '+'` means the command accepts one or more arguments.
     -- `complete = 'command'` enables command-line completion for the arguments,
     -- suggesting other Neovim commands.
-    nargs = '+',
-    complete = 'command'
+    nargs = "+",
+    complete = "command",
 })
