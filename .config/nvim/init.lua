@@ -7,6 +7,7 @@ require("commands")
 require("keymaps")
 
 vim.pack.add({
+    { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
     { src = "https://github.com/echasnovski/mini.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/stevearc/oil.nvim" },
