@@ -17,6 +17,13 @@ vim.lsp.enable({
     "lua_ls",
 })
 
+require("mini.completion").setup({
+    mappings = {
+        scroll_down = "<C-Down>",
+        scroll_up = "<C-Up",
+    },
+})
+
 require("mini.jump2d").setup({
     labels = "abcdefghijklmnopqrstuvwxyz",
     mappings = {
