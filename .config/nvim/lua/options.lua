@@ -11,7 +11,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 1
 -- Highlights the current cursor line.
 -- Need this on for highlight groups to be active.
-vim.opt.cursorline = true 
+vim.opt.cursorline = false
 -- Converts tabs to spaces.
 vim.opt.expandtab = true
 -- Sets the character for the end of buffer.
@@ -43,16 +43,18 @@ vim.opt.shiftwidth = 4
 -- Shows the command in the status line.
 vim.opt.showcmd = true
 -- Hides the current mode in the status line.
-vim.opt.showmode = false
+vim.opt.showmode = true
 -- Hides the sign column.
-vim.opt.signcolumn = "no"
+vim.opt.signcolumn = "yes:3"
 -- Overrides 'ignorecase' if search term contains uppercase.
 vim.opt.smartcase = true
 -- Defines the content of the status column.
-vim.opt.statuscolumn = "%l    " -- Line number and padding.
+vim.opt.statuscolumn = "%s%l    " -- Line number and padding.
 -- Sets the number of spaces a tab counts for.
 vim.opt.tabstop = 4
 -- Sets the maximum line length for text.
 vim.opt.textwidth = 80
 -- Enables persistent undo.
 vim.opt.undofile = true
+-- :h winborder
+vim.opt.winborder = "rounded"
