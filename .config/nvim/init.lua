@@ -1,7 +1,10 @@
+-- Load options first.
+-- Other configuration can be dependent on these settings. For example, many
+-- keymaps require the <leader> key to have been set already.
+require("options")
 require("autocommands")
 require("commands")
 require("keymaps")
-require("options")
 
 vim.pack.add({
     { src = "https://github.com/echasnovski/mini.nvim" },
