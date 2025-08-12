@@ -1,18 +1,11 @@
 alias c="clear"
 alias cd="z"
 alias cdi="zi"
-alias l='eza --color=always --color-scale=all --color-scale-mode=gradient \
-	--icons=always --group-directories-first'
-alias la='eza --color=always --color-scale=all --color-scale-mode=gradient \
-	--icons=always --group-directories-first -a'
-alias ll='eza --color=always --color-scale=all --color-scale-mode=gradient \
-	--icons=always --group-directories-first -l --git -h'
-alias lla='eza --color=always --color-scale=all --color-scale-mode=gradient \
-	--icons=always --group-directories-first -a -l --git -h'
-alias lg="lazygit"
-alias lgdot="lazygit -g .files -w $HOME"
 alias dotfiles="git --git-dir=$HOME/.files/ --work-tree=$HOME"
+alias ld="lazygit -g .files -w $HOME"
+alias lg="lazygit"
 alias n="nvim"
+alias n2="/Users/conor/Desktop/nvim-macos-arm64/bin/nvim"
 alias srcz="source $ZDOTDIR/.zshrc"
 alias t="tree"
 alias venvls="ls -l ~/workspace/venvs/"
