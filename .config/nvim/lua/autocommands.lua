@@ -48,7 +48,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
                     end
                 end,
             })
-        elseif ft == "javascript" or ft == "markdown" then
+        elseif ft == "css" or ft == "html" or ft == "javascript" or ft == "markdown" then
             vim.fn.jobstart({ "prettier", "--write", filename }, {
                 on_exit = function(_, exit_code)
                     if exit_code == 0 then
