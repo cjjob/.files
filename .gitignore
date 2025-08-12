@@ -17,8 +17,12 @@
 !.config
 !.config/nvim
 !.config/nvim/*
+!.config/nvim/colors
+!.config/nvim/colors/*
 !.config/nvim/lua
 !.config/nvim/lua/*
+!.config/nvim/lua/five
+!.config/nvim/lua/five/*
 !.config/wezterm
 !.config/wezterm/*
 !.config/zsh
