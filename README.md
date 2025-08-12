@@ -62,7 +62,7 @@ ln -s .gitignore .ignore
 
 ## Colours
 
-(Coolors palette)[https://coolors.co/eeeeee-696969-333333-7ea16b-fa7921]
+[Coolors palette](https://coolors.co/eeeeee-696969-333333-7ea16b-fa7921)
 
 | Short name | Fancy name       | Hex     |
 | ---------- | ---------------- | ------- |
