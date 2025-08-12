@@ -5,8 +5,9 @@
 -- 2.  Set up html, css, and javascript LSP.
 -- 3.  Get rid of this local vim = vim hack I've used in a couple of places.
 -- 4.  Fix the use of this ripgrep .ignore file across nvim git repo versus
---     'normal' repos.
+--     'normal' repos
 -- 5.  Get rid of n2 alias when 0.12 has stable release.
+-- 6.  Colorscheme loading.
 
 -- Load options first.
 -- Other configuration can be dependent on these settings. For example, many
