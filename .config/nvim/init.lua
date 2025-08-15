@@ -8,6 +8,7 @@
 --     'normal' repos
 -- 5.  Get rid of n2 alias when 0.12 has stable release.
 -- 6.  Colorscheme loading.
+-- 7.  Mini pick for search visual selection.
 
 -- Load options first.
 -- Other configuration can be dependent on these settings. For example, many
@@ -35,10 +36,17 @@ vim.diagnostic.config({
         current_line = true,
     },
 })
+-- Go find LSP configs here:
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+-- Note, you have to install them yourself. We're aren't using Mason.
 vim.lsp.enable({
     "basedpyright",
+    "cssmodules_ls",
+    "cssls",
+    "html",
     "gopls",
     "lua_ls",
+    "ts_ls",
 })
 
 -- Set up plugins.
@@ -52,3 +60,5 @@ require("oil").setup({
 vim.keymap.set("n", "<leader>e", ":Oil<cr>", { desc = "Open Oil" })
 require("setup_mini")
 require("setup_treesitter")
+
+vim.cmd("colorscheme quiet")

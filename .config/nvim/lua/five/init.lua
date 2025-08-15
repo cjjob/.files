@@ -1,9 +1,8 @@
--- This philosophy of this colorscheme and its implementation are described
--- here. This is meant to be fairly rigid code that may not be particularly
--- elegant but is very clear. Excessively verbose, one could say.
+local vim = vim
+
 local M = {}
 
-local colors = {
+local five = {
     white = "#EEEEEE",
     grey = "#696969",
     dark = "#333333",
@@ -12,24 +11,24 @@ local colors = {
 }
 
 local base_groups = {
-    code = { bg = colors.white, fg = colors.dark },
-    comment = { bg = colors.white, fg = colors.grey },
-    pop = { bg = colors.white, fg = colors.green },
-    problem = { bg = colors.white, fg = colors.orange },
+    code = { bg = five.white, fg = five.dark },
+    comment = { bg = five.white, fg = five.grey },
+    pop = { bg = five.white, fg = five.green },
+    problem = { bg = five.white, fg = five.orange },
 }
 
-function invert(group)
+local function invert(group)
     return {
         bg = group.fg,
         fg = group.bg,
     }
 end
 
-function extend(group, opts)
+local function extend(group, opts)
     return vim.tbl_extend("force", group, opts)
 end
 
-function set(group, opts)
+local function set(group, opts)
     vim.api.nvim_set_hl(0, group, opts)
 end
 
@@ -38,12 +37,11 @@ function M.load()
     vim.cmd("hi clear")
     vim.cmd("syntax reset")
 
+    vim.g.colors_name = "five"
+
     -- Set all syntax groups to use base_groups.code
     local highlights = vim.api.nvim_get_hl(0, {})
     for name, _ in pairs(highlights) do
-        if name == "Normal" then
-            print("Found Normal!")
-        end
         vim.api.nvim_set_hl(0, name, base_groups.code)
     end
 
@@ -66,6 +64,8 @@ function M.load()
     set("PmenuSel", extend(base_groups.pop, { bold = true }))
     set("MiniCompletionActiveParameter", { fg = "pink", bold = true })
     set("MiniCompletionInfoBorderOutdated", { fg = "red", bold = true })
+
+    set("Yank", invert(base_groups.pop))
 
     local diagnostic_groups = {
         "DiagnosticDeprecated",
@@ -128,6 +128,52 @@ function M.load()
     set("MiniPickPrompt", base_groups.code) -- prompt.
     set("MiniPickPromptCaret", base_groups.code) -- caret in prompt.
     set("MiniPickPromptPrefix", base_groups.code) -- prefix of the prompt.
+
+    -- https://github.com/MeanderingProgrammer/render-markdown.nvim?tab=readme-ov-file#colors
+    set("RenderMarkdownH1", base_groups.pop) -- H1 icons.
+    set("RenderMarkdownH2", base_groups.pop) -- H2 icons.
+    set("RenderMarkdownH3", base_groups.pop) -- H3 icons.
+    set("RenderMarkdownH4", base_groups.pop) -- H4 icons.
+    set("RenderMarkdownH5", base_groups.pop) -- H5 icons.
+    set("RenderMarkdownH6", base_groups.pop) -- H6 icons.
+    set("RenderMarkdownH1Bg", base_groups.code) -- H1 background line.
+    set("RenderMarkdownH2Bg", base_groups.code) -- H2 background line.
+    set("RenderMarkdownH3Bg", base_groups.code) -- H3 background line.
+    set("RenderMarkdownH4Bg", base_groups.code) -- H4 background line.
+    set("RenderMarkdownH5Bg", base_groups.code) -- H5 background line.
+    set("RenderMarkdownH6Bg", base_groups.code) -- H6 background line.
+    set("RenderMarkdownCode", base_groups.problem) -- Code block background.
+    set("RenderMarkdownCodeInfo", base_groups.pop) -- Code info, after language.
+    set("RenderMarkdownCodeBorder", invert(base_groups.comment)) -- Code border background.
+    set("RenderMarkdownCodeFallback", base_groups.code) -- Fallback for code language.
+    set("RenderMarkdownCodeInline", base_groups.code) -- Inline code background.
+    set("RenderMarkdownQuote", base_groups.code) -- Default for block quote.
+    set("RenderMarkdownQuote1", base_groups.code) -- Level 1 block quote marker.
+    set("RenderMarkdownQuote2", base_groups.code) -- Level 2 block quote marker.
+    set("RenderMarkdownQuote3", base_groups.code) -- Level 3 block quote marker.
+    set("RenderMarkdownQuote4", base_groups.code) -- Level 4 block quote marker.
+    set("RenderMarkdownQuote5", base_groups.code) -- Level 5 block quote marker.
+    set("RenderMarkdownQuote6", base_groups.code) -- Level 6 block quote marker.
+    set("RenderMarkdownInlineHighlight", base_groups.pop) -- Inline highlights contents.
+    set("RenderMarkdownBullet", base_groups.pop) -- List item bullet points.
+    set("RenderMarkdownDash", base_groups.comment) -- Thematic break line.
+    set("RenderMarkdownSign", base_groups.code) -- Sign column background.
+    set("RenderMarkdownMath", base_groups.pop) -- Latex lines.
+    set("RenderMarkdownIndent", base_groups.comment) -- Indent icon.
+    set("RenderMarkdownHtmlComment", base_groups.comment) -- HTML comment inline text.
+    set("RenderMarkdownLink", base_groups.pop) -- Image & hyperlink icons.
+    set("RenderMarkdownWikiLink", base_groups.pop) -- WikiLink icon & text.
+    set("RenderMarkdownUnchecked", base_groups.pop) -- Unchecked checkbox.
+    set("RenderMarkdownChecked", base_groups.pop) -- Checked checkbox.
+    set("RenderMarkdownTodo", base_groups.pop) -- Todo custom checkbox.
+    set("RenderMarkdownTableHead", base_groups.pop) -- Pipe table heading rows.
+    set("RenderMarkdownTableRow", base_groups.code) -- Pipe table body rows.
+    set("RenderMarkdownTableFill", base_groups.comment) -- Pipe table inline padding.
+    set("RenderMarkdownSuccess", base_groups.pop) -- Success related callouts.
+    set("RenderMarkdownInfo", base_groups.pop) -- Info related callouts.
+    set("RenderMarkdownHint", base_groups.pop) -- Hint related callouts.
+    set("RenderMarkdownWarn", base_groups.pop) -- Warning related callouts.
+    set("RenderMarkdownError", base_groups.problem) -- Error related callouts.
 
     vim.notify("Applied minimal highlighting")
 end
