@@ -1,4 +1,4 @@
--- Pull in the wezterm API
+-- Pull in the wezterm API.
 local wezterm = require("wezterm")
 
 -- This will hold the configuration.
@@ -12,14 +12,10 @@ local my_colors = {
     orange = "#FA7921",
 }
 
--- This is where you actually apply your config choices
--- config.font = wezterm.font("0xProto")
--- config.font = wezterm.font("3270 Nerd Font")
--- config.font = wezterm.font("BlexMono Nerd Font")
-config.font = wezterm.font("Iosevka NF")
--- config.font = wezterm.font("VictorMono NF")
+-- This is where you actually apply your config choices.
+config.font = wezterm.font("Fira Code")
 config.font_size = 14
-config.line_height = 1.25
+config.line_height = 1
 
 config.colors = {
     background = my_colors.white,

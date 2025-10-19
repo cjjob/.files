@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 local keys = {
+    -- Show/hide tabs.
     {
         key = "o",
         mods = "SUPER",
@@ -60,7 +61,24 @@ local keys = {
         mods = "SUPER",
         action = act.AdjustPaneSize({ "Right", 2 }),
     },
-
+    -- Alt-Left/RightArrow to send Alt-b/f to the shell.
+    -- Alt-b/f jump back/forward one word.
+    {
+        key = "LeftArrow",
+        mods = "OPT",
+        action = act.SendKey({
+            key = "b",
+            mods = "ALT",
+        }),
+    },
+    {
+        key = "RightArrow",
+        mods = "OPT",
+        action = act.SendKey({
+            key = "f",
+            mods = "ALT",
+        }),
+    },
     -- Delete the whole line (SUPER+Backspace).
     {
         key = "Backspace",
