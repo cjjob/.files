@@ -21,5 +21,8 @@ eval "$(zoxide init zsh)"
 
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 
+# cursor-agent
+export PATH="$HOME/.local/bin:$PATH"
+
 # bun completions
 [ -s "/Users/conor/Library/Application Support/reflex/bun/_bun" ] && source "/Users/conor/Library/Application Support/reflex/bun/_bun"
