@@ -8,7 +8,6 @@
 
 # Now start *including*.
 !.gitignore
-!.ignore
 !README.md
 
 
