@@ -26,3 +26,5 @@
 !.config/wezterm/*
 !.config/zsh
 !.config/zsh/*
+!.vim/
+!.vim/*
