@@ -1,5 +1,4 @@
-hi Comment ctermfg=grey
-hi clear LineNr
+hi LineNr ctermbg=None ctermfg=None
 
 " EasyMotion
 hi EasyMotionTarget         ctermbg=none ctermfg=red
