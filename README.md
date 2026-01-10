@@ -42,24 +42,6 @@ Add this alias to your shell configuration (e.g., `.bashrc`, `.zshrc`) for easie
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ```
 
-## Structure
-
-- `./vimrc`
-- `./bashrc`
-- `./zshrc`
-- `./config/nvim/init.vim`
-- `./gitconfig`
-- ... (List other important dotfiles or directories here)
-
-## ripgrep
-
-ripgrep -used by `mini.pick` - was being a donut and not respecting .gitignore so I symlinked a .ignore
-which is does seem to respect.
-
-```sh
-ln -s .gitignore .ignore
-```
-
 ## Colours
 
 [Coolors palette](https://coolors.co/eeeeee-696969-333333-7ea16b-fa7921)
