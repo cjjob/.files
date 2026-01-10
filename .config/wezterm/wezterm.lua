@@ -5,7 +5,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 local my_colors = {
-    white = "#EEEEEE",
+    white = "#DDDDDD",
     grey = "#696969",
     black = "#333333",
     green = "#7EA16B",
@@ -18,11 +18,11 @@ config.font_size = 14
 config.line_height = 1
 
 config.colors = {
-    background = my_colors.white,
-    foreground = my_colors.black,
+    background = my_colors.black,
+    foreground = my_colors.white,
 
-    selection_bg = my_colors.black,
-    selection_fg = my_colors.orange,
+    selection_bg = my_colors.white,
+    selection_fg = my_colors.green,
 
     split = my_colors.green,
 }

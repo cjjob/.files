@@ -34,7 +34,7 @@ precmd() {
 		local dir_color="#000000"
 	fi
 	# print -rP "%F{$dir_color}%~%f %F{#FA6E07}%B${vcs_info_msg_0_}%b%f"
-	print -rP "%F{#333333}%~%f %F{#FA6E07}%B${vcs_info_msg_0_}%b%f"
+	print -rP "%F{#FFFFFF}%~%f %F{#FA6E07}%B${vcs_info_msg_0_}%b%f"
 }
 
 
@@ -47,5 +47,5 @@ precmd() {
 #  \uf444
 #  \uf120
 #  \uf118
-# export PROMPT="${colored_exit_code}%f $(echo "\uf118")  "
+# export PROMPT="${colored_exit_code}%f $()  "
 export PROMPT="${colored_exit_code}%f "
