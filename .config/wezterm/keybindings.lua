@@ -91,6 +91,22 @@ local keys = {
     -- Cmd-[ to cycle tabs. CMD-] to open tab list to select.
     { key = "[", mods = "CMD", action = wezterm.action.ActivateLastTab },
     { key = "]", mods = "CMD", action = wezterm.action.ShowTabNavigator },
+    -- Super+R to rename the current tab.
+    {
+        key = "r",
+        mods = "SUPER",
+        action = act.PromptInputLine({
+            description = "Enter new tab title",
+            action = wezterm.action_callback(function(window, pane, line)
+                if line then
+                    window:active_tab():set_title(line)
+                end
+            end),
+        }),
+    },
+    -- Reorder tabs.
+    { key = "[", mods = "SUPER|SHIFT", action = act.MoveTabRelative(-1) },
+    { key = "]", mods = "SUPER|SHIFT", action = act.MoveTabRelative(1) },
 }
 
 return keys
