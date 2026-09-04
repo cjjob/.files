@@ -8,6 +8,7 @@
 
 # Now start *including* = "not ignorning".
 !.gitignore
+!.zshenv
 !README.md
 
 
