@@ -1,12 +1,12 @@
 # Start by ignoring everything.
 # From a git-only perspective this isn't *strictly* necessary with a bare repo.
-# We're manually `dotfiles add ...` everything anyway.
+# We manually `dotfiles add ...` everything anyway.
 # But other programs - fd, ripgrep, etc. - might rely on this file to know what to scan.
 # It's also helpful for us as it may prevent some other git idiocy. Maybe?
 # It does come at the cost of maintaining an extra file.
 *
 
-# Now start *including*.
+# Now start *including* = "not ignorning".
 !.gitignore
 !README.md
 
@@ -19,3 +19,7 @@
 !.config/zsh/*
 !.vim/
 !.vim/*
+
+
+# From this point it's like a normal gitignore file. 
+.vim/.netrwhist
