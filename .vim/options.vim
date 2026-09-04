@@ -24,8 +24,6 @@ set smartindent
 
 set fillchars+=eob:\ " <- Note, there is a trailing space.
 
-let g:NERDTreeNodeDelimiter = "-> "
-
 " Open help as full buffer.
 autocmd FileType help only
 

@@ -43,7 +43,3 @@ nnoremap ga <Plug>(EasyAlign)
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nnoremap j <Plug>(easymotion-bd-w)
 nnoremap s <Plug>(easymotion-bd-f)
-
-
-" NERDTree
-nnoremap <leader>e :NERDTreeToggle<CR>
