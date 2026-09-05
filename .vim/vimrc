@@ -1,6 +1,19 @@
+let g:netrw_keepdir = 0   " netrw: cwd follows the browsed directory
+
+
 source ~/.vim/options.vim
 source ~/.vim/keybinds.vim
 source ~/.vim/plugins.vim
 source ~/.vim/lsp.vim
 source ~/.vim/highlights.vim
 
+
+" Auto-load the note template into new .txt notes.
+" Wrapped in an augroup (not a plain autocmd) so it's idempotent: `autocmd!`
+" clears this group's previous handler first. A bare autocmd would register an
+" additional copy every time this vimrc is re-sourced, and each copy fires --
+" :source ~/.vimrc twice and a new note gets the template inserted twice.
+augroup mms_note_template
+  autocmd!
+  autocmd BufNewFile ~/workspace/mms/notes/*.txt 0r ~/workspace/mms/notes/templates/note.txt
+augroup END

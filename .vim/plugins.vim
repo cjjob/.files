@@ -41,7 +41,6 @@ call s:ensure("junegunn/fzf.vim")
 call s:ensure("junegunn/vim-easy-align")
 call s:ensure("tpope/vim-commentary")
 call s:ensure("tpope/vim-surround")
-call s:ensure("vimwiki/vimwiki")
 call s:ensure("yegappan/lsp")
 
 call s:prune()
