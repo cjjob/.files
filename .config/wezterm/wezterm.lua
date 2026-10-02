@@ -43,10 +43,10 @@ config.window_decorations = "RESIZE"
 config.window_close_confirmation = "NeverPrompt"
 
 config.window_padding = {
-    left = 320,
-    right = 320,
-    top = 100,
-    bottom = 100,
+    left = 620,
+    right = 620,
+    top = 200,
+    bottom = 200,
 }
 
 config.keys = require("keybindings")
