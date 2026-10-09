@@ -29,6 +29,8 @@ nnoremap <leader>cd :Ex<CR>
 " :Files uses $FZF_DEFAULT_COMMAND; unset, fzf's own walker ignores .gitignore.
 " rg --files respects .gitignore; --hidden shows dotfiles, but skip .git itself.
 let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git'"
+" Plain preview: preview.sh uses this instead of bat/highlight when it's set.
+let $FZF_PREVIEW_COMMAND = 'cat {}'
 nnoremap <leader>sb :Buffers<CR>
 nnoremap <leader>sf :Files<CR>
 nnoremap <leader>so :History<CR>
