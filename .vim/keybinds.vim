@@ -26,6 +26,9 @@ nnoremap <leader>cd :Ex<CR>
 
 
 " fzf
+" :Files uses $FZF_DEFAULT_COMMAND; unset, fzf's own walker ignores .gitignore.
+" rg --files respects .gitignore; --hidden shows dotfiles, but skip .git itself.
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden --glob '!.git'"
 nnoremap <leader>sb :Buffers<CR>
 nnoremap <leader>sf :Files<CR>
 nnoremap <leader>so :History<CR>
